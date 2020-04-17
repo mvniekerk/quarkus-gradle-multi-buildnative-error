@@ -1,0 +1,31 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'org.kordamp.gradle:jandex-gradle-plugin:0.4.0'
+    }
+}
+
+subprojects {
+    apply plugin: 'org.kordamp.gradle.jandex'
+
+    group 'za.co.koperfontein.pfza'
+    version '0.0.1'
+
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}

@@ -1,0 +1,19 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+      id 'io.quarkus' version "${quarkusPluginVersion}"
+    }
+}
+rootProject.name='quarkus-gradle-multi-buildnative-error'
+
+include 'api'
+include 'config'
+include 'domain'
+include 'repositories'
+include 'services'
+include 'events'
+
